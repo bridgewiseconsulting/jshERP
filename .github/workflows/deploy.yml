@@ -35,10 +35,16 @@ jobs:
       run: |
         docker build -t jsherp -f ./jshERP-boot/Dockerfile ./jshERP-boot 
 
+    - name: Build Frontend Docker image
+      run: |
+        docker build -t jsherp-web -f ./jshERP-web/Dockerfile ./jshERP-web 
+
     - name: Tag image
       run: |
         docker tag jsherp:latest ${{ secrets.ECR_REPOSITORY }}:latest
+        docker tag jsherp-web:latest 696899996656.dkr.ecr.ap-southeast-1.amazonaws.com/jsherp-web:latest
 
     - name: Push image to Amazon ECR
       run: |
         docker push ${{ secrets.ECR_REPOSITORY }}:latest
+        docker push 696899996656.dkr.ecr.ap-southeast-1.amazonaws.com/jsherp-web:latest
