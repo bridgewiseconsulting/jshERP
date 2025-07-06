@@ -10,6 +10,11 @@ jobs:
     name: Build & Push Docker Image
     runs-on: ubuntu-latest
 
+    env:
+      AWS_REGION: ap-southeast-1  # ✅ 指定 AWS 区域
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
     steps:
     - name: Checkout source code
       uses: actions/checkout@v3
