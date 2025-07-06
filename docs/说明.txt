@@ -1,0 +1,11 @@
+1、文件说明
+前端包/jshERP-web
+后端包/jshERP-boot
+
+2、开发说明
+前端开发需要用到nodeJS
+安装node-v16.16.0-x64.msi
+3、部署说明
+前端部署需要nginx进行代理
+后端部署需要 jdk1.8、redis、mysql
+部署环境建议使用宝塔Linux面板来安装基础软件，服务器环境建议用linux的centOS7.5版本
