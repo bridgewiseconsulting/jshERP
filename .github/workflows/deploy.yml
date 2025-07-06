@@ -37,7 +37,7 @@ jobs:
 
     - name: Tag image
       run: |
-        docker tag jsherp:latest ${{ secrets.ECR_REPOSITORY }}:latest
+        docker tag jsherp:latest 696899996656.dkr.ecr.ap-southeast-1.amazonaws.com/jsherp:latest
 
     - name: Push image to Amazon ECR
       run: |
